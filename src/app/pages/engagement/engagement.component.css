@@ -1,0 +1,133 @@
+.engagement-hero {
+    /* background: linear-gradient(rgba(26,35,126,0.7), rgba(57,73,171,0.7)), url('assets/engagement.jpg') center/cover no-repeat; */
+    min-height: 600px;
+    position: relative;
+    overflow: hidden;
+}
+.light-ray {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: lightMove 8s linear infinite;
+    transform: rotate(15deg);
+  }
+  
+  @keyframes lightMove {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+  
+  
+.engagement-hero .shine-effect {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.25) 50%, transparent 100%);
+    transform: skewX(-20deg);
+    animation: shineSweep 6s infinite linear;
+    z-index: 1;
+}
+
+@keyframes shineSweep {
+    0% {
+        left: -75%;
+    }
+
+    100% {
+        left: 125%;
+    }
+}
+
+/* Animations - via animate.css si inclus */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+
+.engagement-card {
+    border-radius: 1.25rem;
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.engagement-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.15);
+}
+
+.icon-glow {
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.engagement-card:hover .icon-glow {
+    transform: scale(1.2) rotate(-6deg);
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.7));
+}
+
+/* Gradient colors */
+.gradient-blue {
+    background: linear-gradient(135deg, #1a237e, #3949ab);
+}
+
+.gradient-green {
+    background: linear-gradient(135deg, #43e97b, #38f9d7);
+}
+
+.gradient-orange {
+    background: linear-gradient(135deg, #ffb347, #ffcc33);
+}
+
+.gradient-pink {
+    background: linear-gradient(135deg, #e040fb, #ff6e7f);
+}
+
+.gradient-purple {
+    background: linear-gradient(135deg, #8e54e9, #4776e6);
+}
+
+.gradient-yellow {
+    background: linear-gradient(135deg, #f7971e, #ffd200);
+}
+
+.gradient-cyan {
+    background: linear-gradient(135deg, #43cea2, #185a9d);
+}
+
+.gradient-red {
+    background: linear-gradient(135deg, #ff5858, #f09819);
+}
+
+.gradient-teal {
+    background: linear-gradient(135deg, #11998e, #38ef7d);
+}
+
+.card-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+.card-text {
+    font-size: 1.05rem;
+    color: #f8f9fa;
+}
+
+@media (max-width: 768px) {
+    .card-title {
+        font-size: 1.15rem;
+    }
+
+    .card-text {
+        font-size: 0.95rem;
+    }
+}
