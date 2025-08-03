@@ -6,11 +6,12 @@ import { Component, AfterViewInit, OnDestroy, Renderer2 } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements AfterViewInit, OnDestroy {
+
   private observer!: IntersectionObserver;
 
   constructor(private renderer: Renderer2) {}
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     const elements = document.querySelectorAll('.reveal');
     this.observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -25,9 +26,17 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
     elements.forEach(el => this.observer.observe(el));
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     if (this.observer) {
       this.observer.disconnect();
+    }
+  }
+
+  // ✅ Méthode correcte
+  togglePackaging(): void {
+    const container = document.querySelector('.product-container');
+    if (container) {
+      container.classList.toggle('flipped');
     }
   }
 }
